@@ -1,0 +1,26 @@
+﻿<Window x:Class="CustomerDatabaseDeploy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Stretch" Height="125">
+                <StackPanel Width="100">
+                    <Label Content="Server" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Top" Height="25" />
+                    <Label Content="Database" HorizontalAlignment="Stretch" Height="25" Margin="5,5,5,5" VerticalAlignment="Top" />
+                    <Label Content="Nuget package" HorizontalAlignment="Stretch" Height="30" Margin="5,5,5,5" VerticalAlignment="Top"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" MinWidth="300">
+                    <TextBox x:Name="ServerName" HorizontalAlignment="Stretch" Height="25" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top"  TextChanged="ServerName_TextChanged"/>
+                    <TextBox x:Name="DatabaseName" HorizontalAlignment="Stretch" Height="25" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top"  TextChanged="DatabaseName_TextChanged"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="NugetPackage" MinWidth="300" HorizontalAlignment="Stretch" Height="25" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="NugetPackage_TextChanged"/>
+                        <Button x:Name="FileBrowser" Content="..." HorizontalAlignment="Left" Height="25" Margin="5,5,5,5" VerticalAlignment="Top" Width="25" Click="FileBrowser_Click" RenderTransformOrigin="0.56,1.259"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="BtnDeploy" Content="Deploy" HorizontalAlignment="Right" Height="93" Margin="5,5,5,0" VerticalAlignment="Top" Width="108" Click="BtnDeploy_Click" IsEnabled="False"/>
+            </StackPanel>
+            <TextBox x:Name="Output" HorizontalAlignment="Stretch" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Stretch" Focusable="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsReadOnly="True"/>
+        </DockPanel>
+    </Grid>
+</Window>
